@@ -1,0 +1,8 @@
+# Arquivos e pastas gerados pelo Angular e ferramentas
+/dist
+/coverage
+/.angular
+/node_modules
+
+# Arquivos de configuração do Webpack
+webpack.config.js
