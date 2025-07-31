@@ -1,0 +1,15 @@
+stages:
+  - release
+
+semantic_release:
+  image: node:20
+  stage: release
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  before_script:
+    - npm ci
+    - npm install semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/git @semantic-release/gitlab
+  script:
+    - npx semantic-release
+  variables:
+    GITLAB_TOKEN: $GITLAB_TOKEN
